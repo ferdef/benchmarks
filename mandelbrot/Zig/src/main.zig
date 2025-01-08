@@ -1,5 +1,6 @@
 const std = @import("std");
 //const png = @import("std").image.png;
+const zigimg = @import("zigimg");
 
 pub fn main() !void {
     const allocator = std.heap.page_allocator;
@@ -58,8 +59,13 @@ pub fn main() !void {
         row += 1;
     }
 
-    const file = try std.fs.cwd().createFile("mandelbrot.png", .{});
-    defer file.close();
+    //const file = try std.fs.cwd().createFile("mandelbrot.png", .{});
+    //defer file.close();
+
+    var image = try zigimg.Image.fromRawPixels(allocator, width, height, pixels[0..], .bgra32);
+    defer image.deinit();
+
+    try image.writeToFilePath("mandel.png", .{ .png = .{} });
 
     // var writer = file.writer();
     // try png.writeRgba8(allocator, &writer, width, height, pixels);
