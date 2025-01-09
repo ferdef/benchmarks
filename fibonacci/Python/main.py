@@ -11,8 +11,8 @@ def measure_fn(type, fn, pos):
     print(f'{type}: Fibonacci of {pos} is {value} ({time_duration:.3f} s elapsed)')
 
 if __name__ == "__main__":
-    pos = 45
+    pos = 50
     print(f'Calculating fibonacci number in pos {pos}')
     measure_fn('Iterative', fibo_iter, pos)
-    #measure_fn('Recursive', fibo, pos)
+    measure_fn('Recursive', fibo, pos)
     measure_fn('Cached Rec', fibo_cache, pos)
