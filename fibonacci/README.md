@@ -1,3 +1,11 @@
+# Scenario
+
+### This is a Recursive Fibonacci for the 50th element
+
+- Compiled if possible
+- Using Release profile if available
+- Used `time` in Linux
+
 # Current Results:
 
 |Language|OS|CPU|Time|
