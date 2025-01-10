@@ -4,6 +4,8 @@
 #include <chrono>
 #include <random>
 
+const unsigned long SIZE = 10000000;
+
 void quicksort(std::vector<int>& arr, int low, int high) {
     if (low < high) {
         int pivot = arr[high];
@@ -24,8 +26,8 @@ void quicksort(std::vector<int>& arr, int low, int high) {
 }
 
 int main() {
-    std::vector<int> arr(1000000);
-    std::generate(arr.begin(), arr.end(), []() { return rand() % 1000000; });
+    std::vector<int> arr(SIZE);
+    std::generate(arr.begin(), arr.end(), []() { return rand() % SIZE; });
 
     auto start = std::chrono::high_resolution_clock::now();
 
