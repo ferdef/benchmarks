@@ -33,15 +33,17 @@ func quicksort(arr []int) []int {
 }
 
 func main() {
+    size := 10_000_000
+
     rand.Seed(time.Now().UnixNano())
-    arr := make([]int, 1000000)
+    arr := make([]int, size)
     for i := range arr {
-        arr[i] = rand.Intn(1000000)
+        arr[i] = rand.Intn(size)
     }
 
     start := time.Now()
     quicksort(arr)
     duration := time.Since(start)
 
-    fmt.Printf("Go: %v seconds\n", duration.Seconds())
+    fmt.Printf("Go: %s\n", duration)
 }
