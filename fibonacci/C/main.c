@@ -18,7 +18,7 @@ void measureFn(char* ftype, fnType fn, int pos) {
 }
 
 int main(void) {
-    int pos = 50;
+    int pos = 45;
    
 
     printf("Calculating fibonacci number in pos %d\n", pos);
