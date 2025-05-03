@@ -8,6 +8,6 @@ def fibo_cache(number):
 
 def _fibo(number):
     if number < 2:
-        return number
+        return 1
     return fibo_cache(number-1) + fibo_cache(number-2)
     
