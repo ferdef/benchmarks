@@ -22,10 +22,8 @@ function main(): boolean {
 
   let pixels: number[] = new Array(bounds[0] * bounds[1]).fill(0);
 
-  console.log("Rendering the file");
   render(pixels, bounds, upperLeft, lowerRight);
 
-  console.log("Writing the file");
   writeImage(args[2], pixels, bounds);
 
   return true;
