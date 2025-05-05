@@ -1,14 +1,8 @@
-export class Complex {
-  constructor(public re: number, public im: number) {}
-
-  toString(): string {
-    return `${this.re}${this.im >= 0 ? '+' : ''}${this.im}i`;
-  }
-}
+import { Complex } from "./complex";
 
 export function parsePair<T>(
-  s: string, 
-  separator: string, 
+  s: string,
+  separator: string,
   parser: (str: string) => T | null
 ): [T, T] | null {
   const index = s.indexOf(separator);
