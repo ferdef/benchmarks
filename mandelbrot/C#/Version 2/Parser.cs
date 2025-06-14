@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Numerics;
 
 namespace MandelSharp;
@@ -35,7 +36,9 @@ public class Parser
         (T)(object)(int.Parse(parts[0]), int.Parse(parts[1])),
 
       Type t when t == typeof(Complex) =>
-        (T)(object)new Complex(double.Parse(parts[0]), double.Parse(parts[1])),
+        (T)(object)new Complex(
+          double.Parse(parts[0], CultureInfo.InvariantCulture),
+          double.Parse(parts[1], CultureInfo.InvariantCulture)),
 
       _ => throw new NotSupportedException($"Type {typeof(T)} not Supported")
     };
